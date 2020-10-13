@@ -8,17 +8,17 @@ class Computadora
 private:
     std::string so;
     std::string cpu;
-    int ram;
+    float ram;
     float almacenamiento;
 
 public:
     Computadora();
-    Computadora(const std::string &so, const std::string &cpu, int ram, float almacenamiento);
+    Computadora(const std::string &so, const std::string &cpu, float ram, float almacenamiento);
     void setSO(const std::string &so);
     std::string getSO();
     void setCPU(const std::string &cpu);
     std::string getCPU();
-    void setRAM(int ram);
+    void setRAM(float ram);
     int getRAM();
     void setAlmacenamiento(float almacenamiento);
     float getAlmacenamiento();

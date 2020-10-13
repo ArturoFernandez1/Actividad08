@@ -4,7 +4,7 @@ using namespace std;
 
 Computadora::Computadora() {}
 
-Computadora::Computadora(const std::string &so, const std::string &cpu, int ram, float almacenamiento)
+Computadora::Computadora(const std::string &so, const std::string &cpu, float ram, float almacenamiento)
 {
     this->so = so;
     this->cpu = cpu;
@@ -28,7 +28,7 @@ std::string Computadora::getCPU()
 {
     return cpu;
 }
-void Computadora::setRAM(int ram)
+void Computadora::setRAM(float ram)
 {
     this->ram = ram;
 }
