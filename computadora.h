@@ -1,7 +1,8 @@
 #ifndef COMPUTADORA_H
 #define COMPUTADORA_H
 
-#include <iostream>
+#include<iostream>
+#include<iomanip>
 
 class Computadora
 {
@@ -22,6 +23,8 @@ public:
     int getRAM();
     void setAlmacenamiento(float almacenamiento);
     float getAlmacenamiento();
+    friend std::ostream& operator<<(std::ostream &out, const Computadora& c);
+    friend std::istream& operator>>(std::istream &in, Computadora& c);
 };
 
 #endif
