@@ -22,5 +22,9 @@ int main()
 
     lab.mostrar();
 
+    Computadora c4;
+    cin >> c4;
+    cout << c4;
+
     return 0;
 }
