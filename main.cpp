@@ -21,10 +21,16 @@ int main()
     lab.agregarFinal(c3);
 
     lab.mostrar();
+    cout << endl;
 
     Computadora c4;
     cin >> c4;
-    cout << c4;
+    cout << c4 << endl;
 
+    Computadora c5("Windows 7", "Intel Dual Core E5700", 2, 128);
+    lab << c4 << c5;
+
+    lab.mostrar();
+    
     return 0;
 }
