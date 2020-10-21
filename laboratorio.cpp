@@ -22,13 +22,21 @@ void Laboratorio::agregarFinal(const Computadora &c)
 
 void Laboratorio::mostrar()
 {
+    cout << left;
+    cout << setw(20) << "Sistema operativo" ;
+    cout << setw(24) << "CPU";
+    cout << setw(10) << "RAM(GB)";
+    cout << setw(8) << "Almacenamiento(GB)";
+    cout << endl;
     for (size_t i = 0; i < cont; i++)
     {
         Computadora &c = datos[i];
-        cout << "Sistema operativo: " << c.getSO() << endl;
-        cout << "CPU: " << c.getCPU() << endl;
-        cout << "RAM: " << c.getRAM() << " GB" << endl;
-        cout << "Almacenamiento: " << c.getAlmacenamiento() << " GB" << endl;
-        cout << endl;
+        cout << c;
     }
+}
+
+Laboratorio& operator<<(Laboratorio &l, const Computadora& c){
+    l.agregarFinal(c);
+
+    return l;
 }
