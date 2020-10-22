@@ -52,6 +52,26 @@ void Laboratorio::respaldar()
     archivo.close();
 }
 
+void Laboratorio::respaldar_tabla()
+{
+    ofstream archivo("laboratorio_tabla.txt");
+    if (archivo.is_open())
+    {
+        archivo << left;
+        archivo << setw(20) << "Sistema operativo";
+        archivo << setw(24) << "CPU";
+        archivo << setw(10) << "RAM(GB)";
+        archivo << setw(8) << "Almacenamiento(GB)";
+        archivo << endl;
+        for (size_t i = 0; i < cont; i++)
+        {
+            Computadora &c = datos[i];
+            archivo << c;
+        }
+    }
+    archivo.close();
+}
+
 Laboratorio &operator<<(Laboratorio &l, const Computadora &c)
 {
     l.agregarFinal(c);
