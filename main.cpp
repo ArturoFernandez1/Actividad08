@@ -31,6 +31,8 @@ int main()
     lab << c4 << c5;
 
     lab.mostrar();
-    
+
+    lab.respaldar();
+
     return 0;
 }

@@ -23,7 +23,7 @@ void Laboratorio::agregarFinal(const Computadora &c)
 void Laboratorio::mostrar()
 {
     cout << left;
-    cout << setw(20) << "Sistema operativo" ;
+    cout << setw(20) << "Sistema operativo";
     cout << setw(24) << "CPU";
     cout << setw(10) << "RAM(GB)";
     cout << setw(8) << "Almacenamiento(GB)";
@@ -35,7 +35,25 @@ void Laboratorio::mostrar()
     }
 }
 
-Laboratorio& operator<<(Laboratorio &l, const Computadora& c){
+void Laboratorio::respaldar()
+{
+    ofstream archivo("laboratorio.txt");
+    if (archivo.is_open())
+    {
+        for (size_t i = 0; i < cont; i++)
+        {
+            Computadora &c = datos[i];
+            archivo << c.getSO() << endl;
+            archivo << c.getCPU() << endl;
+            archivo << c.getRAM() << endl;
+            archivo << c.getAlmacenamiento() << endl;
+        }
+    }
+    archivo.close();
+}
+
+Laboratorio &operator<<(Laboratorio &l, const Computadora &c)
+{
     l.agregarFinal(c);
 
     return l;

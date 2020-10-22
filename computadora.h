@@ -20,7 +20,7 @@ public:
     void setCPU(const std::string &cpu);
     std::string getCPU();
     void setRAM(float ram);
-    int getRAM();
+    float getRAM();
     void setAlmacenamiento(float almacenamiento);
     float getAlmacenamiento();
     friend std::ostream& operator<<(std::ostream &out, const Computadora& c);

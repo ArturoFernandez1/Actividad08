@@ -32,7 +32,7 @@ void Computadora::setRAM(float ram)
 {
     this->ram = ram;
 }
-int Computadora::getRAM()
+float Computadora::getRAM()
 {
     return ram;
 }

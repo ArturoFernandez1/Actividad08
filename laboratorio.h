@@ -2,6 +2,7 @@
 #define LABORATORIO_H
 
 #include <iostream>
+#include <fstream>
 #include "computadora.h"
 
 class Laboratorio
@@ -14,6 +15,7 @@ public:
     Laboratorio();
     void agregarFinal(const Computadora &c);
     void mostrar();
+    void respaldar();
     friend Laboratorio& operator<<(Laboratorio &l, const Computadora& c);
 };
 
