@@ -72,6 +72,37 @@ void Laboratorio::respaldar_tabla()
     archivo.close();
 }
 
+void Laboratorio::recuperar()
+{
+    ifstream archivo("laboratorio.txt");
+    
+    if (archivo.is_open())
+    {
+        string myStr;
+        Computadora c;
+        while (!archivo.eof())
+        {
+            getline(archivo, myStr);
+            if(archivo.eof()){
+                break;
+            }
+            c.setSO(myStr);
+
+            getline(archivo, myStr);
+            c.setCPU(myStr);
+
+            getline(archivo, myStr);
+            c.setRAM(stof(myStr));
+
+            getline(archivo, myStr);
+            c.setAlmacenamiento(stof(myStr));
+
+            agregarFinal(c);
+        }
+    }
+    archivo.close();
+}
+
 Laboratorio &operator<<(Laboratorio &l, const Computadora &c)
 {
     l.agregarFinal(c);
